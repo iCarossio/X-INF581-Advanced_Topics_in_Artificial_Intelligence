@@ -1,0 +1,7 @@
+# Implementation
+
+Depth-First Search on valid neihboors: The goal is to reduce as much as possible the number of neihboors in order to make the search as fast as possible
+    - Trick 1: The algorithm begins by choosing a preferred direction (set_direction) by splitting the matrix in 4 same-sized sub-matrixes and finding the one which is already the most completed (density()). Then the algorithm will always proceed from this corner [let's say for example upper left] to the opposite one [e.g. lower right].
+    - Trick 2: For each vertex V(k), a neihboor is defined as vertex V(k+1) which differs by only one tile from V(k). In order to avoid visiting multiple times the same vertex, only one of the of the tile position returned by *get_emtpy_tiles()* with *trick 1* is randomly choosen by the *choice()* made in get_neighbors. Thus there is no need for a hash map of visited vertexes.
+    - Trick 3: Given this tile position, each of the 14 avalaible *TILES* are considered in a random order (shuffle()) so that completely different versions of the map are created at each execution of the algorithm. A neihboor V(k+1) is valid (i.e. is put in queue) iff P(V(k+1)|M,V(1),…,V(k)))>0. The function is_valid() returns in fact P(V(k+1)|M,V(1),…,V(k)))>0 (True or False).
+    - Trick 4: Search is early-stopped when ONE path is found, that is when the current vertex is a completed and valid version of the map.
