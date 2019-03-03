@@ -1,0 +1,35 @@
+digraph MDP {
+	s_1 [style=filled shape=circle fillcolor=lightblue] ;
+	a_11 [label="a_1", style=filled, shape=diamond, fillcolor=indianred1, fontsize=10, fixedsize=true, width=0.5, height=0.5] ;
+	s_1 -> a_11 ;
+	a_11 -> s_1 [label="0.1"] ;
+	a_11 -> s_2 [label="0.2"] ;
+	a_11 -> s_3 [label="0.7 (r=1.0)" color=green] ;
+	a_12 [label="a_2", style=filled, shape=diamond, fillcolor=indianred1, fontsize=10, fixedsize=true, width=0.5, height=0.5] ;
+	s_1 -> a_22 ;
+	a_12 -> s_1 [label="0.5"] ;
+	a_12 -> s_2 [label="0.2"] ;
+	a_12 -> s_3 [label="0.4 (r=1.0)" color=green] ;
+	s_2 [style=filled shape=circle fillcolor=lightblue] ;
+	a_21 [label="a_1", style=filled, shape=diamond, fillcolor=indianred1, fontsize=10, fixedsize=true, width=0.5, height=0.5] ;
+	s_2 -> a_11 ;
+	a_21 -> s_1 [label="0.5"] ;
+	a_21 -> s_2 [label="0.5"] ;
+	a_21 -> s_3 [label="0.0 (r=1.0)" color=green] ;
+	a_22 [label="a_2", style=filled, shape=diamond, fillcolor=indianred1, fontsize=10, fixedsize=true, width=0.5, height=0.5] ;
+	s_2 -> a_22 ;
+	a_22 -> s_1 [label="0.0"] ;
+	a_22 -> s_2 [label="0.2"] ;
+	a_22 -> s_3 [label="0.8 (r=1.0)" color=green] ;
+	s_3 [style=filled shape=circle fillcolor=lightblue] ;
+	a_31 [label="a_1", style=filled, shape=diamond, fillcolor=indianred1, fontsize=10, fixedsize=true, width=0.5, height=0.5] ;
+	s_3 -> a_11 ;
+	a_31 -> s_1 [label="0.1"] ;
+	a_31 -> s_2 [label="0.3"] ;
+	a_31 -> s_3 [label="0.6 (r=1.0)" color=green] ;
+	a_32 [label="a_2", style=filled, shape=diamond, fillcolor=indianred1, fontsize=10, fixedsize=true, width=0.5, height=0.5] ;
+	s_3 -> a_22 ;
+	a_32 -> s_1 [label="0.3"] ;
+	a_32 -> s_2 [label="0.4"] ;
+	a_32 -> s_3 [label="0.2 (r=1.0)" color=green] ;
+}
